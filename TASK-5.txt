@@ -1,0 +1,429 @@
+                                              
+                                        A.Print odd numbers in an array
+ 
+
+                       ANONYMOUS FUNCTION
+
+
+
+
+var nums = [1,2,3,4,5];
+var odds = [];
+var oddNumbers = function(nums) {
+    for (var i = 0; i < nums.length; i++) {
+        if ((nums[i] % 2) ==1 ) {
+            odds.push(nums[i]);
+                console.log(odds);
+        }
+        
+    }
+};
+
+oddNumbers(nums);
+
+
+
+
+
+                              IIFE FUNCTION
+
+var nums = [1,2,3,4,5];
+var odds = [];
+var oddNumbers = (function() {
+    for (var i = 0; i < nums.length; i++) {
+        if ((nums[i] % 2) ==1 ) {
+            odds.push(nums[i]);
+                console.log(odds);
+        }
+        
+    }
+})();
+
+
+
+                              ARROW FUNCTION
+
+var nums = [1,2,3,4,5];
+var odds = [];
+var oddNumbers = ()=> {
+    for (var i = 0; i < nums.length; i++) {
+        if ((nums[i] % 2) ==1 ) {
+            odds.push(nums[i]);
+                console.log(odds);
+        }
+        
+    }
+};
+
+                              
+               B.Convert all the strings to title caps in a string array
+                            
+                       ANONYMOUS FUNCTION
+ 
+                        
+var string=function(str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');
+}
+    console.log(string("anonymous function"));
+
+
+                             
+                             IIFE FUNCTION
+      
+var string=(function() {
+  var str="immediately  invoked function expression"
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');                
+})();     
+console.log(string);            
+ 
+
+                           ARROW FUNCTION    
+
+
+var str= (string)=>{
+    string=string.toLowerCase().split(' ');
+    for(var i=0; i<string.length; i++){
+      string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+    }
+      return string.join(' ');
+    }
+    console.log(str("arrow function using arrow symbol"));
+                  
+
+
+                          C. Sum of all numbers in an array
+
+                            
+                                ANONYMOUS FUNCTION                             
+           
+var add=function (...arr){
+  let sum=0;
+  for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum;
+}
+console.log(add(1,12,3,4));
+
+                                      IIFE FUNCTION
+
+
+let sum = function() {
+  return function sum(x, y, z) {
+    const args = [x, y, z];
+    return args.reduce((a, b) => a + b, 0);
+  };
+}();
+console.log(sum(1, 2, 3,10,55))
+
+                                   ARROW FUNCTION
+
+var add= (...arr)=>{
+  let sum=0;
+  for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum;
+}
+console.log(add(1,12,3,4,25));
+
+       
+
+
+                           D. Print  all numbers in an array
+
+                          
+                                ANONYMOUS FUNCTION
+
+
+let arr=[1,2,3,4,6,11,34,56,23,10,5,11,13]
+var prime=[];
+var primeNumber=function(arr){
+  for(var i=1; i<=arr.length; i++){
+    if(arr[i]%2==1){
+    prime.push(arr[i]);
+      console.log(prime);
+    }
+  }
+}
+primeNumber(arr);
+
+                          IIFE FUNCTION
+
+let arr=[1,2,3,4,6,11,34,56,23,10,5,11,13]
+var prime=[];
+var primeNumber=(function(){
+  for(var i=1; i<=arr.length; i++){
+    if(arr[i]%2==1){
+    prime.push(arr[i]);
+      console.log(prime);
+    }
+  }
+})();
+
+
+                                   ARROW FUNCTION
+
+let arr=[1,2,3,4,6,11,34,56,23,10,5,11,13]
+var prime=[];
+var primeNumber=()=>{
+  for(var i=1; i<=arr.length; i++){
+    if((arr[i]%2)==1){
+    prime.push(arr[i]);
+      console.log(prime);
+    }
+  }
+};
+
+
+
+                                                     E.Return all the palindromes in an arra
+
+                 
+                   ANONYMOUS FUNCTION
+
+
+
+const Palindromes = function (words) {
+ return words.filter(function (word) {
+    return word.split("").reverse().join("") === word;
+  });
+};
+
+console.log(Palindromes(["hello", "ror"]));
+                    
+                     
+
+
+                        IIFE FUNCTION
+
+const Palindromes =( function (words) {
+ return words.filter(function (word) {
+    return word.split("").reverse().join("") === word;
+  });
+});
+
+console.log(Palindromes(["hello", "ror"]));
+
+
+
+
+                        ARROW FUNCTION
+
+console.log(palin)  
+let arr = ["ror","Hello","madam"];
+let palin = arr.filter(w => {
+  let len = w.length;
+  for (let i = 0; i < len / 2; i++) {
+    if (w[i] == w[len - i - 1]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+});
+console.log(palin)                
+
+
+
+                        E.Remove duplicates from an array
+
+                             ANONYMOUS FUNCTION
+
+var arr =["1","ok","3","ok","4"];
+ var  remove=function(arr) {
+        return arr.filter((item, 
+            index) => arr.indexOf(item) === index);
+    }
+      
+    console.log(remove(arr));
+     
+                       IIFE FUNCTION
+                         
+ var arr =["1","ok","3","ok","4"];
+ var  remove=(function(arr) {
+        return arr.filter((item, 
+            index) => arr.indexOf(item) === index);
+    });
+    console.log(remove(arr));
+
+
+             ARROW FUNCTION
+
+var duplicate=["1","ok","3","ok","4"];
+      
+    function remove(arr) {
+        return duplicate.filter((item, 
+            index) => duplicate.indexOf(item) === index);
+    }
+      
+    console.log(remove(arr));
+
+                                         
+
+                               
+
+                                                                      
+
+
+                      F.Return median of two sorted arrays of the same size.
+
+
+                                 ANONYMOUS FUNCTION
+
+var arr=function(a,b){
+    var c=[];
+    var n=a.length;
+    var p=b.length;
+    var i=0;
+    var j=0;
+    var med=0;
+    while(i<n && j<p)
+    {
+        if(a[i]<b[j])
+        {
+            c.push(a[i])
+            i++
+        }
+        else
+        {
+            c.push(b[j])
+            j++
+        }
+    }
+    
+     if(i<n)
+     {
+         for(let k=i;k<n;k++)
+         {
+             c.push(a[k])
+         }
+     }
+     else if(j<p)
+     {
+         for(let m=j;m<p;m++)
+         {
+             c.push(b[m])
+         }
+     }
+     if(c.length%2===0)
+     {
+         med=(c[(c.length/2)-1]+c[c.length/2])/2
+     }
+     else
+     {
+         med=c[Math.floor(c.length/2)]
+     }
+     return med;
+    
+}
+console.log(arr([1,2,3,4,5],[6,7,8,9,10]));
+                       
+
+
+                                 IIFE Function:   
+
+
+
+(function(a,b){
+    var c=[];
+    var n=a.length;
+    var p=b.length;
+    var i=0;
+    var j=0;
+    var med=0;
+    while(i<n && j<p)
+    {
+        if(a[i]<b[j])
+        {
+            c.push(a[i])
+            i++
+        }
+        else
+        {
+            c.push(b[j])
+            j++
+        }
+    }
+    
+     if(i<n)
+     {
+         for(let k=i;k<n;k++)
+         {
+             c.push(a[k])
+         }
+     }
+     else if(j<p)
+     {
+         for(let m=j;m<p;m++)
+         {
+             c.push(b[m])
+         }
+     }
+     if(c.length%2===0)
+     {
+         med=(c[(c.length/2)-1]+c[c.length/2])/2
+     }
+     else
+     {
+         med=c[Math.floor(c.length/2)]
+     }
+     console.log(med);
+    
+}) ([1,2,3,4,5],[6,7,8,9,10]);
+
+                                    
+
+                                                             
+
+
+                                    G. Rotate an array by k times
+
+                                        ANONYMOUS FUNCTION
+
+var rotate=function(a,k){
+    n=a.length;
+ c=[];
+  d="";
+  for(i=0;i<n;i++)
+  {
+      c[(i+k)%(n)]=a[i]
+  }
+  for(i=0;i<c.length-1;i++)
+  {
+      d+=c[i]+" "
+  }
+  d+=c[c.length-1]
+  return d;
+}
+console.log(rotate([1,2,3,4,5,6,7,8,9],1))
+
+
+                            IIFE FUNCTION 
+
+(function(a,k){
+    n=a.length;
+ c=[];
+  d="";
+  for(i=0;i<n;i++)
+  {
+      c[(i+k)%(n)]=a[i]
+  }
+  for(i=0;i<c.length-1;i++)
+  {
+      d+=c[i]+" "
+  }
+  d+=c[c.length-1]
+  console.log(d);
+}) ([1,2,3,4,5,6,7,8,9],1);
+
+       
+                                
